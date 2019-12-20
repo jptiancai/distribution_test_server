@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Celery Flask Application</title>
+</head>
+<body>
+  <h1>分布式测试平台-简版</h1>
+  
+  <h2> 执行结果： {{ celery.result }} </h2>
+
+  <form method="GET" action="/hello">
+    <label for="name"> 输入你的名字 : </label>
+    <input type="text" name="name"/>
+    <input type="submit"/>
+  </form>
+
+  <form method="GET" action="/add">
+    <label for="number"> 输入操作的数字 : </label>
+    <input type="text" name="number1"/>
+    <input type="text" name="number2"/>
+    <input type="submit"/>
+  </form>
+</body>
+</html>
