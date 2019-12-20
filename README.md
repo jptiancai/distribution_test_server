@@ -33,10 +33,10 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
 ```
 
 ## To-Do List
-- [x] 第一版
+- [x] 第一版 v0.0.1
   - 核心框架搭建，可支持分布式
-- [ ] 第二版
+- [ ] 第二版 v0.0.2
   - nosestests 输出html报告形式
   - 任务发布者cURL方式，修改成界面调用
-- [ ] 第三版
+- [ ] 第三版 v0.0.3
   - 消费者，测试任务，docker 化
