@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-nosetests
+python test/test_tasks.py

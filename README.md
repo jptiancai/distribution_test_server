@@ -32,11 +32,18 @@ celery -A tasks worker -l info
 curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  http://localhost:5555/api/task/apply/tasks.query_airplane
 ```
 
+- 输出测试报告HTML
+
+    位于reports/*.html
+
+    ![](/reports/img/TestResults___main__.TestMethods_2019-12-21_23-02-09.png)
+
 ## To-Do List
 - [x] 第一版 v0.0.1
   - 核心框架搭建，可支持分布式
-- [ ] 第二版 v0.0.2
-  - nosestests 输出html报告形式
+- [x] 第二版 v0.0.2
+  - 输出html报告形式
+- [ ] 第四版 v0.0.3
   - 任务发布者cURL方式，修改成界面调用
-- [ ] 第三版 v0.0.3
+- [ ] 第三版 v0.0.4
   - 消费者，测试任务，docker 化
