@@ -44,9 +44,9 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
 - [x] 第二版 v0.0.2
   - 输出html报告形式
 - [ ] 第三版 v0.0.3
-  - [x]目标测试服，docker化[http_server](https://github.com/jptiancai/http_server)
-  - [ ]celery worker，执行测试用例服务，docker化
-  - [ ]celery flower 监听服务，docker化
+  - [x] 目标测试服，docker化，[跳转链接：http_server](https://github.com/jptiancai/http_server)
+  - [ ] celery worker，执行测试用例服务，docker化
+  - [ ] celery flower 监听服务，docker化
 
 - [ ] 第四版 v0.0.4
-  - 任务发布者cURL方式，修改成界面调用
+  - [ ] 任务发布者cURL方式，修改成界面调用
