@@ -1,0 +1,10 @@
+FROM python:3.6.10-alpine
+MAINTAINER "Allen Jiang"
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
+    && apk update \
+    && apk add git gcc musl-dev libffi-dev openssl-dev make
+COPY . /data/app/distribution_test_server
+WORKDIR /data/app/distribution_test_server
+RUN pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt \
+    && chmod +x run_worker.sh
+ENV DOCKER 1

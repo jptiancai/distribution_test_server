@@ -1,8 +1,16 @@
 import requests
 import json
-from nose.tools import assert_equal
+import HtmlTestRunner
+import unittest
 
-def test_query_airplane():
-    r = requests.post('http://localhost:5001/query_airplane', json = {'aireplane_id':1})
-    result = json.loads(json.dumps(r.json()))
-    assert_equal(result.get('code', 0), 1)
+
+class TestMethods(unittest.TestCase):
+
+    def test_query_airplane(self):
+        r = requests.post('http://127.0.0.1:5001/query_airplane', json = {'aireplane_id':1})
+        result = json.loads(json.dumps(r.json()))
+        self.assertEqual(result.get('code', 0), 1)
+
+if __name__ == '__main__':
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='reports'))
+

@@ -1,5 +1,4 @@
 from celery_server import app
-from test.test_tasks import test_query_airplane
 import subprocess
 import os
 from celery.utils.log import get_task_logger
