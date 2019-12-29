@@ -16,5 +16,5 @@ CELERYBEAT_SCHEDULE = {
         #'args': (1,2),
     },
 }
-
+CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
 CELERY_IGNORE_RESULT = False

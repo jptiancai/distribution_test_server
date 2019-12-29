@@ -12,19 +12,57 @@
 
 ```
 python server.py
+docker build -t http_server:http_server .
+docker run -d -v /tmp/http_logs:/data/app/http_server/logs -p 5001:5001 http_server:http_server
 ```
 
 - 启动flower 监听Celery服务，暴露Restful API
 
 ```
 celery -A tasks flower
+docker build -f Dockerfile_flower -t distribution_test_server:flower .
+docker run -d -v /tmp/distribution_test_server_logs:/data/app/distribution_test_server/logs -p 5555:5555 distribution_test_server:flower
 ```
 
 - 启动Celery worker，执行测试用例
 
 ```
 celery -A tasks worker -l info
+docker build -f Dockerfile_worker -t distribution_test_server:worker .
+docker run -d -v /tmp/distribution_test_server_logs:/data/app/distribution_test_server/logs distribution_test_server:worker
 ```
+
+- docker mongo
+
+```
+docker pull mongo:4.2.1
+```
+
+- docker compose
+
+```
+docker-compose build
+docker-compose --verbose up
+```
+
+- 查看容器中的docker内容
+
+```
+
+mongo --host 127.0.0.1 --port 27018
+
+```
+
+- 查看docker 运行情况
+
+```
+# 当前运行
+docker ps
+# 所有运行过的列表
+docker ps -a | more
+```
+
+
 
 - 运行入口
 
@@ -46,7 +84,10 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
 - [ ] 第三版 v0.0.3
   - [x] 目标测试服，docker化，[跳转链接：http_server](https://github.com/jptiancai/http_server)
   - [ ] celery worker，执行测试用例服务，docker化
-  - [ ] celery flower 监听服务，docker化
-
+  - [x] celery flower 监听服务，docker化
 - [ ] 第四版 v0.0.4
+  - [ ] docker compose 
+- [ ] 第五版 v0.0.5
+  - [ ] 读取excel测试用例
+- [ ] 第六版 v0.0.6
   - [ ] 任务发布者cURL方式，修改成界面调用

@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  worker:
+    image: distribution_test_server:worker
+    command: ./run_worker.sh
+    volumes:
+        - /tmp/distribution_test_server_logs:/data/app/distribution_test_server/logs
+    links:
+        - broker
+    depends_on:
+        - broker    
+  flower:
+    image: distribution_test_server:flower
+    ports:
+        - "5555:5555"
+    volumes:
+        - /tmp/distribution_test_server_logs:/data/app/distribution_test_server/logs
+    links:
+        - broker
+    depends_on:
+        - broker
+  broker:
+    restart: always
+    image: mongo:4.2.1
+    ports:
+        - "27018:27017"
+    command:
+        - mongod
+  http_server:
+    image: http_server:http_server
+    volumes:
+        - /tmp/http_logs:/data/app/http_server/logs
+    ports: 
+        - "5001:5001"
