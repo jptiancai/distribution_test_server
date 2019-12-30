@@ -1,8 +1,10 @@
 from celery.schedules import crontab
 
+BROKER_URL = 'mongodb://broker:27017/jobs'
+
 CELERY_RESULT_BACKEND = "mongodb"
 CELERY_MONGODB_BACKEND_SETTINGS = {
-    "host": "127.0.0.1",
+    "host": "broker",
     "port": 27017,
     "database": "jobs", 
     "taskmeta_collection": "stock_taskmeta_collection",
