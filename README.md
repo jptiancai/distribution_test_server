@@ -86,8 +86,8 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
 - [x] 第四版 v0.0.4
   - [x] celery worker，执行测试用例服务，docker化
   - [x] celery flower 监听服务，docker化
-- [ ] 第四版 v0.0.5
-  - [ ] docker compose 
+- [x] 第四版 v0.0.5
+  - [x] docker compose 
 - [ ] 第五版 v0.0.6
   - [ ] 读取excel测试用例
 - [ ] 第六版 v0.0.7

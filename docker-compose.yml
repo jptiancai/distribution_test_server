@@ -2,8 +2,8 @@ version: '3'
 
 services:
   worker:
+    user: robot
     image: distribution_test_server:worker
-    command: ./run_worker.sh
     volumes:
         - /tmp/distribution_test_server_logs:/data/app/distribution_test_server/logs
     links:
