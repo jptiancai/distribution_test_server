@@ -81,9 +81,9 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
   - 核心框架搭建，可支持分布式
 - [x] 第二版 v0.0.2
   - 输出html报告形式
-- [ ] 第三版 v0.0.3
+- [x] 第三版 v0.0.3
   - [x] 目标测试服，docker化，[跳转链接：http_server](https://github.com/jptiancai/http_server)
-  - [ ] celery worker，执行测试用例服务，docker化
+  - [x] celery worker，执行测试用例服务，docker化
   - [x] celery flower 监听服务，docker化
 - [ ] 第四版 v0.0.4
   - [ ] docker compose 
@@ -91,3 +91,9 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
   - [ ] 读取excel测试用例
 - [ ] 第六版 v0.0.6
   - [ ] 任务发布者cURL方式，修改成界面调用
+
+
+## celery source code
+
+- [Source code for celery.platforms](https://docs.celeryproject.org/en/3.1/_modules/celery/platforms.html)
+> run celery as root, you will receive warning msg.Above that is the source code, enjoy it!
