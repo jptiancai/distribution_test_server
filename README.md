@@ -83,13 +83,14 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
   - 输出html报告形式
 - [x] 第三版 v0.0.3
   - [x] 目标测试服，docker化，[跳转链接：http_server](https://github.com/jptiancai/http_server)
+- [x] 第四版 v0.0.4
   - [x] celery worker，执行测试用例服务，docker化
   - [x] celery flower 监听服务，docker化
-- [ ] 第四版 v0.0.4
+- [ ] 第四版 v0.0.5
   - [ ] docker compose 
-- [ ] 第五版 v0.0.5
+- [ ] 第五版 v0.0.6
   - [ ] 读取excel测试用例
-- [ ] 第六版 v0.0.6
+- [ ] 第六版 v0.0.7
   - [ ] 任务发布者cURL方式，修改成界面调用
 
 
