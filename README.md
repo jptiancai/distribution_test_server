@@ -43,6 +43,7 @@ docker pull mongo:4.2.1
 ```
 docker-compose build
 docker-compose --verbose up
+docker-compose up --scale worker=2
 ```
 
 - 查看容器中的docker内容
@@ -68,6 +69,8 @@ docker ps -a | more
 
 ```
 curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  http://localhost:5555/api/task/apply/tasks.query_airplane
+
+ab -n 20 -c 1 -p post_data.txt -T 'application/json'  http://localhost:5555/api/task/apply/tasks.query_airplane
 ```
 
 - 输出测试报告HTML
@@ -86,11 +89,11 @@ curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  ht
 - [x] 第四版 v0.0.4
   - [x] celery worker，执行测试用例服务，docker化
   - [x] celery flower 监听服务，docker化
-- [x] 第四版 v0.0.5
+- [x] 第五版 v0.0.5
   - [x] docker compose 
-- [x] 第五版 v0.0.6
+- [x] 第六版 v0.0.6
   - [x] 执行csv测试用例，并输出测试报告
-- [ ] 第六版 v0.0.7
+- [ ] 第七版 v0.0.7
   - [ ] 任务发布者cURL方式，修改成界面调用
 
 
