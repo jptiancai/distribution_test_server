@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="4" hostname="xiaohouzideMacBook-Air.local" name="pytest" skipped="0" tests="7" time="0.385" timestamp="2020-01-04T22:37:10.632805"><testcase classname="test.test_pytest" file="test/test_pytest.py" line="16" name="test_data" time="0.002"><failure message="AssertionError: 
+Expected: &lt;2&gt;
+     but: was &lt;1&gt;">def test_data():
+&gt;       assert_that(1, equal_to(2))
+E       AssertionError: 
+E       Expected: &lt;2&gt;
+E            but: was &lt;1&gt;
+
+test/test_pytest.py:18: AssertionError</failure></testcase><testcase classname="test.test_pytest" file="test/test_pytest.py" line="20" name="test_parameter_1[1-2]" time="0.001"><failure message="AssertionError: 
+Expected: &lt;2&gt;
+     but: was &lt;1&gt;">actual = 1, expect = 2
+
+    @pytest.mark.parametrize(&quot;actual, expect&quot;,[
+        (1, 2),
+        (2, 1),
+        (&quot;aaa&quot;, &quot;bbb&quot;),
+        (&quot;aaa&quot;, &quot;aaa&quot;)
+    ])
+    def test_parameter_1(actual, expect):
+&gt;       assert_that(actual, equal_to(expect))
+E       AssertionError: 
+E       Expected: &lt;2&gt;
+E            but: was &lt;1&gt;
+
+test/test_pytest.py:28: AssertionError</failure></testcase><testcase classname="test.test_pytest" file="test/test_pytest.py" line="20" name="test_parameter_1[2-1]" time="0.001"><failure message="AssertionError: 
+Expected: &lt;1&gt;
+     but: was &lt;2&gt;">actual = 2, expect = 1
+
+    @pytest.mark.parametrize(&quot;actual, expect&quot;,[
+        (1, 2),
+        (2, 1),
+        (&quot;aaa&quot;, &quot;bbb&quot;),
+        (&quot;aaa&quot;, &quot;aaa&quot;)
+    ])
+    def test_parameter_1(actual, expect):
+&gt;       assert_that(actual, equal_to(expect))
+E       AssertionError: 
+E       Expected: &lt;1&gt;
+E            but: was &lt;2&gt;
+
+test/test_pytest.py:28: AssertionError</failure></testcase><testcase classname="test.test_pytest" file="test/test_pytest.py" line="20" name="test_parameter_1[aaa-bbb]" time="0.001"><failure message="AssertionError: 
+Expected: &apos;bbb&apos;
+     but: was &apos;aaa&apos;">actual = &apos;aaa&apos;, expect = &apos;bbb&apos;
+
+    @pytest.mark.parametrize(&quot;actual, expect&quot;,[
+        (1, 2),
+        (2, 1),
+        (&quot;aaa&quot;, &quot;bbb&quot;),
+        (&quot;aaa&quot;, &quot;aaa&quot;)
+    ])
+    def test_parameter_1(actual, expect):
+&gt;       assert_that(actual, equal_to(expect))
+E       AssertionError: 
+E       Expected: &apos;bbb&apos;
+E            but: was &apos;aaa&apos;
+
+test/test_pytest.py:28: AssertionError</failure></testcase><testcase classname="test.test_pytest" file="test/test_pytest.py" line="20" name="test_parameter_1[aaa-aaa]" time="0.001"></testcase><testcase classname="test.test_pytest" file="test/test_pytest.py" line="40" name="test_http_req[1-YES-\u5065\u5eb7\u68c0\u67e5-GET-http://127.0.0.1:5001-/health--{&quot;code&quot;: 0, &quot;msg&quot;: &quot;server is ok&quot;, &quot;data&quot;: {&quot;version&quot;: &quot;0.1&quot;, &quot;update_date&quot;: &quot;2019-12-10&quot;}}]" time="0.029"><system-out>用例编号：1
+请求接口：http://127.0.0.1:5001/health
+请求参数：
+接口预期值：{&quot;code&quot;: 0, &quot;msg&quot;: &quot;server is ok&quot;, &quot;data&quot;: {&quot;version&quot;: &quot;0.1&quot;, &quot;update_date&quot;: &quot;2019-12-10&quot;}}
+接口实际值：{&quot;code&quot;: 0, &quot;msg&quot;: &quot;server is ok&quot;, &quot;data&quot;: {&quot;version&quot;: &quot;0.1&quot;, &quot;update_date&quot;: &quot;2019-12-10&quot;}}
+</system-out></testcase><testcase classname="test.test_pytest" file="test/test_pytest.py" line="40" name="test_http_req[2-YES-\u67e5\u8be2\u98de\u673a\u540d\u5b57-POST-http://127.0.0.1:5001-/query_airplane-{&quot;aireplane_id&quot;:1}-{&quot;code&quot;: 1, &quot;msg&quot;: &quot;welcome to Lockheed Corporation!&quot;, &quot;data&quot;: {&quot;aireplane_id&quot;: 1, &quot;airplane_name&quot;: &quot;P-38&quot;}}]" time="0.017"><system-out>用例编号：2
+请求接口：http://127.0.0.1:5001/query_airplane
+请求参数：{&quot;aireplane_id&quot;:1}
+接口预期值：{&quot;code&quot;: 1, &quot;msg&quot;: &quot;welcome to Lockheed Corporation!&quot;, &quot;data&quot;: {&quot;aireplane_id&quot;: 1, &quot;airplane_name&quot;: &quot;P-38&quot;}}
+接口实际值：{&quot;code&quot;: 1, &quot;msg&quot;: &quot;welcome to Lockheed Corporation!&quot;, &quot;data&quot;: {&quot;aireplane_id&quot;: 1, &quot;airplane_name&quot;: &quot;P-38&quot;}}
+</system-out></testcase></testsuite></testsuites>
