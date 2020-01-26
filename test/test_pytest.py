@@ -1,9 +1,10 @@
 import pytest
-from hamcrest import *
 import csv
 import os
 import requests
 import json
+from hamcrest.core.assert_that import assert_that
+from hamcrest.core.core.isequal import equal_to
 
 '''
 command 1: pytest test/test_pytest.py
@@ -32,7 +33,7 @@ def read_values_from_excel():
     with open(os.getcwd() + '/test/file.csv', 'r') as f:
         reader = csv.reader(f, delimiter="	")
         next(reader, None)  # skip the headers
-        values = list(map(tuple, reader))
+        values = list(map(tuple, reader)) # [(),(),()......]
     print(values)
     return values
 

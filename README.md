@@ -71,6 +71,8 @@ docker ps -a | more
 curl -v -H 'Content-Type:application/json' -X 'POST' -d '{"aireplane_id":1}'  http://localhost:5555/api/task/apply/tasks.query_airplane
 
 ab -n 20 -c 1 -p post_data.txt -T 'application/json'  http://localhost:5555/api/task/apply/tasks.query_airplane
+
+docker-compose up --scale worker=2
 ```
 
 - 输出测试报告HTML
