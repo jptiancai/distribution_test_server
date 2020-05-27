@@ -1,4 +1,3 @@
-from celery.schedules import crontab
 
 BROKER_URL = 'mongodb://broker:27017/jobs'
 
@@ -7,16 +6,12 @@ CELERY_MONGODB_BACKEND_SETTINGS = {
     "host": "broker",
     "port": 27017,
     "database": "jobs", 
-    "taskmeta_collection": "stock_taskmeta_collection",
+    "taskmeta_collection": "pytest_tasks",
 }
 
-#Celery 定时任务设置
-CELERYBEAT_SCHEDULE = {
-    'every-minute': {
-        'task': 'tasks.query_airplane',
-        'schedule': crontab(minute='*/1')
-        #'args': (1,2),
-    },
+CELERY_TIMEZONE = 'Asia/Shanghai'
+CELERYD_POOL_RESTARTS = True
+
+CELERY_IMPORTS = {
+    'task_query_airplane'
 }
-CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
-CELERY_IGNORE_RESULT = False

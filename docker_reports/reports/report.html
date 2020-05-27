@@ -241,7 +241,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 23-May-2020 at 16:42:47 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
+    <p>Report generated on 23-May-2020 at 11:22:33 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -249,15 +249,15 @@ function filter_table(elem) {
         <td>{&apos;pytest&apos;: &apos;5.3.2&apos;, &apos;py&apos;: &apos;1.8.1&apos;, &apos;pluggy&apos;: &apos;0.13.1&apos;}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Darwin-18.6.0-x86_64-i386-64bit</td></tr>
+        <td>Linux-4.9.184-linuxkit-x86_64-with</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{&apos;html&apos;: &apos;2.0.1&apos;, &apos;celery&apos;: &apos;4.4.1&apos;, &apos;metadata&apos;: &apos;1.8.0&apos;}</td></tr>
+        <td>{&apos;metadata&apos;: &apos;1.8.0&apos;, &apos;celery&apos;: &apos;4.4.1&apos;, &apos;html&apos;: &apos;2.0.1&apos;}</td></tr>
       <tr>
         <td>Python</td>
-        <td>3.6.8</td></tr></table>
+        <td>3.6.10</td></tr></table>
     <h2>Summary</h2>
-    <p>2 tests ran in 2.92 seconds. </p>
+    <p>2 tests ran in 1.02 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -272,13 +272,13 @@ function filter_table(elem) {
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_http.py::test_http_req[1-YES-helth check-GET-http://127.0.0.1:5001-/health--{&quot;code&quot;: 0, &quot;msg&quot;: &quot;server is ok&quot;, &quot;data&quot;: {&quot;version&quot;: &quot;0.1&quot;, &quot;update_date&quot;: &quot;2019-12-10&quot;}}]</td>
-          <td class="col-duration">0.16</td>
+          <td class="col-name">test_http.py::test_http_req[1-YES-helth check-GET-http://http_server:5001-/health--{&quot;code&quot;: 0, &quot;msg&quot;: &quot;server is ok&quot;, &quot;data&quot;: {&quot;version&quot;: &quot;0.1&quot;, &quot;update_date&quot;: &quot;2019-12-10&quot;}}]</td>
+          <td class="col-duration">0.17</td>
           <td class="col-links"><a class="url" href="http://www.example.com/" target="_blank">URL</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>用例编号：1
-请求接口：http://127.0.0.1:5001/health
+请求接口：http://http_server:5001/health
 请求参数：
 接口预期值：{&quot;code&quot;: 0, &quot;msg&quot;: &quot;server is ok&quot;, &quot;data&quot;: {&quot;version&quot;: &quot;0.1&quot;, &quot;update_date&quot;: &quot;2019-12-10&quot;}}
 接口实际值：{&quot;code&quot;: 0, &quot;msg&quot;: &quot;server is ok&quot;, &quot;data&quot;: {&quot;version&quot;: &quot;0.1&quot;, &quot;update_date&quot;: &quot;2019-12-10&quot;}}
@@ -286,13 +286,13 @@ function filter_table(elem) {
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_http.py::test_http_req[2-YES-query airplane by call service-POST-http://127.0.0.1:5001-/query_airplane-{&quot;aireplane_id&quot;:1}-{&quot;code&quot;: 1, &quot;msg&quot;: &quot;welcome to Lockheed Corporation!&quot;, &quot;data&quot;: {&quot;aireplane_id&quot;: 1, &quot;airplane_name&quot;: &quot;P-38&quot;}}]</td>
-          <td class="col-duration">0.07</td>
+          <td class="col-name">test_http.py::test_http_req[2-YES-query airplane by call service-POST-http://http_server:5001-/query_airplane-{&quot;aireplane_id&quot;:1}-{&quot;code&quot;: 1, &quot;msg&quot;: &quot;welcome to Lockheed Corporation!&quot;, &quot;data&quot;: {&quot;aireplane_id&quot;: 1, &quot;airplane_name&quot;: &quot;P-38&quot;}}]</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"><a class="url" href="http://www.example.com/" target="_blank">URL</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>用例编号：2
-请求接口：http://127.0.0.1:5001/query_airplane
+请求接口：http://http_server:5001/query_airplane
 请求参数：{&quot;aireplane_id&quot;:1}
 接口预期值：{&quot;code&quot;: 1, &quot;msg&quot;: &quot;welcome to Lockheed Corporation!&quot;, &quot;data&quot;: {&quot;aireplane_id&quot;: 1, &quot;airplane_name&quot;: &quot;P-38&quot;}}
 接口实际值：{&quot;code&quot;: 1, &quot;msg&quot;: &quot;welcome to Lockheed Corporation!&quot;, &quot;data&quot;: {&quot;aireplane_id&quot;: 1, &quot;airplane_name&quot;: &quot;P-38&quot;}}

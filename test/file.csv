@@ -1,3 +1,6 @@
-ID	Test_is_exec	TestCase	Req_type	Req_host	Req_interface 	Req_data	Result_expected 
-1	YES	健康检查	GET	http://127.0.0.1:5001	/health		{"code": 0, "msg": "server is ok", "data": {"version": "0.1", "update_date": "2019-12-10"}}
-2	YES	查询飞机名字	POST	http://127.0.0.1:5001	/query_airplane	{"aireplane_id":1}	{"code": 1, "msg": "welcome to Lockheed Corporation!", "data": {"aireplane_id": 1, "airplane_name": "P-38"}}
+ID	Test_is_exec	TestCase	Req_type	Req_host	Req_interface	Req_data	Result_expected
+1	YES	helth check	GET	http://http_server:5001	/health		{"code": 0, "msg": "server is ok", "data": {"version": "0.1", "update_date": "2019-12-10"}}
+2	YES	query airplane by call service	POST	http://http_server:5001	/query_airplane	{"aireplane_id":1}	{"code": 1, "msg": "welcome to Lockheed Corporation!", "data": {"aireplane_id": 1, "airplane_name": "P-38"}}
+3	NO	query airplane by call flow sync task api	POST	http://http_server:5555/api/task/apply/tasks.query_airplane	/query_airplane	{"aireplane_id":1}	{"code": 1, "msg": "welcome to Lockheed Corporation!", "data": {"aireplane_id": 1, "airplane_name": "P-38"}}
+4	NO	query airplane by call flow async task api	POST	http://http_server:5555/api/task/async-apply/tasks.query_airplane	/query_airplane	{"aireplane_id":1}	{"code": 1, "msg": "welcome to Lockheed Corporation!", "data": {"aireplane_id": 1, "airplane_name": "P-38"}}
+5	NO	query airplane by call flow async task result api	POST	http://http_server:5555/api/task/result/	/query_airplane	{"aireplane_id":1}	{"code": 1, "msg": "welcome to Lockheed Corporation!", "data": {"aireplane_id": 1, "airplane_name": "P-38"}}

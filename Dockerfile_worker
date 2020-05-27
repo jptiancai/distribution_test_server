@@ -6,8 +6,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 COPY . /data/app/distribution_test_server
 WORKDIR /data/app/distribution_test_server
 RUN pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt \
-    && chmod +x run_worker.sh \
-    && adduser -D -u 1000 robot
-ENV DOCKER 1
+    && adduser -D -u 1000 robot \
+    && chown -R robot:robot /data/app/distribution_test_server/
 USER robot
-ENTRYPOINT celery -A tasks worker -l info
+ENTRYPOINT celery worker -A celery_server -l info >./logs/start_worker.log 2>&1
