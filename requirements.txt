@@ -1,7 +1,7 @@
 pymongo==3.5.1
 requests==2.22.0
 celery==4.4.1
-flower==0.9.4
+flower==1.2.0
 pytest==5.3.2
 pytest-html==2.0.1
 PyHamcrest==1.9.0
